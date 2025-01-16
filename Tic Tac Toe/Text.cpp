@@ -21,6 +21,7 @@ Text::~Text()
 {
 	if (texture)
 		SDL_DestroyTexture(texture);
+
 	if (font)
 		TTF_CloseFont(font);
 
@@ -36,13 +37,16 @@ Text::~Text()
 void Text::Load(const char* file, unsigned size)
 {
 	this->size = size;
-	if (font = TTF_OpenFont(file, size))
+
+	font = TTF_OpenFont(file, size);
+	if (!font)
 	{
-		rect.h = size;
-		rect.w = size;
-	}
-	else
 		std::cerr << "Erro ao carregar fonte: " << TTF_GetError() << std::endl;
+		return;
+	}
+
+	rect.h = size;
+	rect.w = size;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -51,22 +55,26 @@ void Text::String(const std::string& string)
 {
 	text = string;
 	rect.w = int(string.size()) * size;
-	if (surface = TTF_RenderText_Solid(font, string.c_str(), color))
+
+	surface = TTF_RenderText_Solid(font, string.c_str(), color);
+	if (!surface)
 	{
-		if (texture)
-		{
-			SDL_DestroyTexture(texture);
-			texture = nullptr;
-		}
-
-		if (!(texture = SDL_CreateTextureFromSurface(Engine::window.renderer, surface)))
-			std::cerr << "Erro ao criar textura de texto: " << SDL_GetError() << std::endl;
-
-		SDL_FreeSurface(surface);
-		surface = nullptr;
-	}
-	else
 		std::cerr << "Erro ao criar superficie de texto: " << TTF_GetError() << std::endl;
+		return;
+	}
+
+	if (texture)
+	{
+		SDL_DestroyTexture(texture);
+		texture = nullptr;
+	}
+
+	texture = texture = SDL_CreateTextureFromSurface(Engine::window.renderer, surface);
+	if (!texture)
+		std::cerr << "Erro ao criar textura de texto: " << SDL_GetError() << std::endl;
+
+	SDL_FreeSurface(surface);
+	surface = nullptr;
 }
 
 //--------------------------------------------------------------------------------------------------

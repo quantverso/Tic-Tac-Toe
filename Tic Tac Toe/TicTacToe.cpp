@@ -16,7 +16,7 @@ TicTacToe::TicTacToe() :
 
 void TicTacToe::Start()
 {
-    int border{ int(size * 0.1f) };
+    const int border{ int(size * 0.1f) };
 
     // Define subjanela
     SetViewport(border, border, size - border * 2, size - border * 2);
@@ -64,7 +64,7 @@ void TicTacToe::Draw()
     window.SetRenderDrawColor(Color::White);
 
     // Dois terços da janela da cena
-    static int twoSteps{ 2 * step };
+    static const int twoSteps{ 2 * step };
 
     // Desenha as linhas verticais
     window.DrawLine(step, 0, step, size);

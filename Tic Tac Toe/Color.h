@@ -32,6 +32,7 @@ inline Color& Color::operator=(const Color& other)
 {
 	if (this != &other)
 		SDL_Color::operator=(other);
+
 	return *this;
 }
 

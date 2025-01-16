@@ -23,8 +23,10 @@ Scene::~Scene()
 {
 	std::vector<Entity*> temp{ objects.begin(), objects.end() };
 	for (const auto& obj : temp)
+	{
 		if (destroyable.find(obj) != destroyable.end())
 			delete obj;
+	}
 	objects.clear();
 }
 
@@ -95,6 +97,7 @@ void Scene::Draw()
 	{
 		if (obj->visible)
 			obj->Draw();
+
 		obj->DrawComponents();
 	}
 }
@@ -104,7 +107,9 @@ void Scene::Draw()
 void Scene::DestroyObjects()
 {
 	for (const auto& obj : destroy)
+	{
 		delete obj;
+	}
 	destroy.clear();
 
 	Sound::Release();

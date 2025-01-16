@@ -27,14 +27,15 @@ public:
             window.DrawLine(
                 position.x - size, position.y - size,
                 position.x + size, position.y + size);
+
             window.DrawLine(
                 position.x + size, position.y - size,
                 position.x - size, position.y + size);
         }
 
     private:
-        unsigned size{ 40 };
-        Vector2i position{};
+        const unsigned size{ 40 };
+        Vector2i       position{};
 
     } playerX;
 

@@ -146,10 +146,31 @@ public:
 	///////////////////////////////////////////////////////////
 	void SetBackground(const Texture* texture);
 
+	///////////////////////////////////////////////////////////
+	/// \brief Define a área da viewport.
+	///
+	/// \param x Coordenada X inicial da viewport.
+	/// \param y Coordenada Y inicial da viewport.
+	/// \param width Largura da viewport.
+	/// \param height Altura da viewport.
+	///
+	///////////////////////////////////////////////////////////
 	void SetViewport(int x, int y, int width, int height);
 
+	///////////////////////////////////////////////////////////
+	/// \brief Obtém o retângulo da área da viewport.
+	///
+	/// \return Referência constante para o retângulo da viewport.
+	///
+	///////////////////////////////////////////////////////////
 	const Rect& GetViewport() const;
 
+	///////////////////////////////////////////////////////////
+	/// \brief Obtém as dimensões da viewport.
+	///
+	/// \return Referência constante para as dimensões da viewport.
+	///
+	///////////////////////////////////////////////////////////
 	const ::Size& Size() const;
 
 protected:
@@ -221,6 +242,7 @@ T* Scene::FindObject(const std::string& id)
 	auto it = objHash.find(id);
 	if (it != objHash.end())
 		return dynamic_cast<T*>(it->second);
+
 	return nullptr;
 }
 

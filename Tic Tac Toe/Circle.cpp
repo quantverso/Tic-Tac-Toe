@@ -12,11 +12,11 @@ Circle::Circle() :
 
 void Circle::Draw(Window* window) const
 {
-	static const int   precision{ 25 };	      // Menor precisão por quadrante
-	static const int   size{ precision * 4 }; // Tamanho do vetor de pontos
-	static const int   halfSize{ size / 2 };  // Metade do tamanho do vetor	
-	static Vector2i    points[size];		  // Armazena os pontos dos quadrantes
-	static const float step{ float(M_PI / (2 * precision)) }; // Passo para iterar pelo primeiro quadrante
+	constexpr size_t precision{ 25 };	    // Menor precisão por quadrante
+	constexpr size_t size{ precision * 4 }; // Tamanho do vetor de pontos
+	constexpr size_t halfSize{ size / 2 };  // Metade do tamanho do vetor
+	constexpr float  step{ float(M_PI / (2 * precision)) }; // Passo para iterar pelo primeiro quadrante
+	static Vector2i  points[size]; // Armazena os pontos dos quadrantes
 
 	int x0{ int(position.x) };
 	int y0{ int(position.y) };
@@ -24,7 +24,7 @@ void Circle::Draw(Window* window) const
 	int offset{ ~int(radius * 2) & 1 };
 
 	// Calcula os pontos para um quadrante e espelha nos demais
-	for (int i{}; i < precision; ++i)
+	for (size_t i{}; i < precision; ++i)
 	{
 		int x1{ int(radius * cosf(i * step)) };
 		int y1{ int(radius * sinf(i * step)) };

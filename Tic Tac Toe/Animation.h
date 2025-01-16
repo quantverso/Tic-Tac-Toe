@@ -96,11 +96,11 @@ private:
 
     using RectMap = std::unordered_map<unsigned, RectCoords>; ///< Mapa de animações.
 
-    RectMap      rectMap;     ///< Mapa de animações associadas a IDs.
-    RectCoords*  selected{};  ///< Ponteiro para a animação atualmente selecionada.
-    int          index{};     ///< Índice do quadro atual.
-    unsigned     lastIndex{}; ///< Último índice usado (para animações contínuas).
-    unsigned     currentId{ std::numeric_limits<unsigned>::max() }; ///< ID da animação atual.
+    RectMap     rectMap;     ///< Mapa de animações associadas a IDs.
+    RectCoords* selected{};  ///< Ponteiro para a animação atualmente selecionada.
+    int         index{};     ///< Índice do quadro atual.
+    unsigned    lastIndex{}; ///< Último índice usado (para animações contínuas).
+    unsigned    currentId{ std::numeric_limits<unsigned>::max() }; ///< ID da animação atual.
 
     Clock clock;         ///< Relógio para controle do tempo de execução.
     float elapsedTime{}; ///< Tempo decorrido desde o último frame.

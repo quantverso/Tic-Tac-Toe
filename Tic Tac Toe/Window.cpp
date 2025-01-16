@@ -35,13 +35,8 @@ void Window::Create()
 		}
 
 		// Cria a janela gráfica
-		if (!(window = SDL_CreateWindow(
-			title,
-			SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED,
-			int(size.width),
-			int(size.height),
-			SDL_WINDOW_SHOWN)))
+		window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, int(size.width), int(size.height), SDL_WINDOW_SHOWN);
+		if (!window)
 		{
 			std::cerr << "Erro ao criar janela: " << SDL_GetError() << std::endl;
 			SDL_Quit();
@@ -49,13 +44,16 @@ void Window::Create()
 		}
 
 		// Cria o renderizador
-		if (!(renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED)))
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+		if (!renderer)
 		{
 			std::cerr << "Erro ao criar renderizador: " << SDL_GetError() << std::endl;
 			Close();
+			return;
 		}
-		else
-			SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+
+		// Habilita mistura para desenhar com transparência.
+		SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 	}
 }
 

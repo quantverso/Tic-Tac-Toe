@@ -20,8 +20,10 @@ void SoundBuffer::Load(const char* file, unsigned channels)
 
 	// Carrega os objetos de som
 	sounds = std::make_unique<sf::Sound[]>(channels);
-	for (unsigned i{}; i < channels; i++)
+	for (unsigned i{}; i < channels; ++i)
+	{
 		sounds[i].setBuffer(*buffer);
+	}
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -38,7 +40,7 @@ void SoundBuffer::Play(bool loop)
 
 void SoundBuffer::Stop()
 {
-	for (unsigned i{}; i < channels; i++)
+	for (unsigned i{}; i < channels; ++i)
 	{
 		sounds[i].stop();
 		sounds[i].setLoop(false);
@@ -49,8 +51,10 @@ void SoundBuffer::Stop()
 
 void SoundBuffer::Pitch(float pitch)
 {
-	for (unsigned i{}; i < channels; i++)
+	for (unsigned i{}; i < channels; ++i)
+	{
 		sounds[i].setPitch(pitch);
+	}
 }
 
 // ------------------------------------------------------------------------------------------------

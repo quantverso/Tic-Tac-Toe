@@ -36,15 +36,17 @@ void Texture::Load(const char* file)
 		texture = nullptr;
 	}
 
-	if (texture = IMG_LoadTexture(Engine::window.renderer, file))
+	texture = IMG_LoadTexture(Engine::window.renderer, file);
+	if (!texture)
 	{
-		int w, h;
-		SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
-		size.width = float(w);
-		size.height = float(h);
-	}
-	else
 		std::cerr << "Falha ao carregar textura: " << IMG_GetError() << std::endl;
+		return;
+	}
+
+	int w, h;
+	SDL_QueryTexture(texture, nullptr, nullptr, &w, &h);
+	size.width = float(w);
+	size.height = float(h);
 }
 
 //--------------------------------------------------------------------------------------------------

@@ -94,6 +94,7 @@ inline bool Mouse::ButtonDown(MouseButton button)
 {
     if (ButtonPressed(button) && !wasPressed[button])
         return wasPressed[button] = true;
+
     return false;
 }
 

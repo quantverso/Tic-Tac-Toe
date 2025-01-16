@@ -24,7 +24,9 @@ void Material::Add(const ::Texture* texture)
 {
 	if (this->texture.get() != texture)
 		this->texture = std::shared_ptr<::Texture>(const_cast<::Texture*>(texture), [](::Texture*) {});
+
 	entity->transform.Size(texture->Size().width, texture->Size().height);
+
 	w = int(texture->Size().width);
 	h = int(texture->Size().height);
 }

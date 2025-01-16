@@ -12,7 +12,7 @@ void Engine::Run(Scene* scene)
 
     scene->Start();
 
-    if (auto old{ std::exchange(Engine::scene, scene) })
+    if (Scene* old{ std::exchange(Engine::scene, scene) })
     {
         delete old;
         return;

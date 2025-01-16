@@ -4,8 +4,8 @@
 
 // ------------------------------------------------------------------------------------------------
 
-Window&		Entity::window{ Engine::window };		///< Janela gráfica
-float&		Entity::deltaTime{ Engine::deltaTime };	///< Tempo decorrido entre frames
+Window& Entity::window{ Engine::window };		///< Janela gráfica
+float&  Entity::deltaTime{ Engine::deltaTime };	///< Tempo decorrido entre frames
 
 //--------------------------------------------------------------------------------------------------
 
@@ -37,7 +37,9 @@ Entity::~Entity()
 void Entity::UpdateComponents()
 {
 	for (const auto& component : components)
+	{
 		component.second->Update();
+	}
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -45,8 +47,10 @@ void Entity::UpdateComponents()
 void Entity::DrawComponents()
 {
 	for (const auto& component : components)
+	{
 		if (component.second->visible)
 			component.second->Draw();
+	}
 }
 
 // ------------------------------------------------------------------------------------------------

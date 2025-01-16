@@ -239,6 +239,7 @@ T* Entity::GetComponent()
     auto it{ components.find(std::type_index(typeid(T))) };
     if (it != components.end())
         return static_cast<T*>(it->second.get());
+
     return nullptr;
 }
 

@@ -37,7 +37,9 @@ Collider::~Collider()
 void Collider::Draw()
 {
     for (const auto& b : boundings)
+    {
         window.Draw(b.get());
+    }
 }
 
 
@@ -46,7 +48,9 @@ void Collider::Draw()
 void Collider::Position(float x, float y)
 {
     for (const auto& b : boundings)
+    {
         b->Position(x, y);
+    }
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -125,6 +129,7 @@ inline bool Collider::IsColliding(const Collider* other)
                 return true;
         }
     }
+
     return false;
 }
 

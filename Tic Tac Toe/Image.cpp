@@ -37,24 +37,28 @@ void Image::Load(const char* file)
 		surface = nullptr;
 	}
 
-	if (surface = IMG_Load(file))
+	surface = IMG_Load(file);
+	if (!surface)
 	{
-        if (surface->format->BitsPerPixel != 32)
-        {
-            if (auto converted{ SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGBA32, 0) })
-            {
-                SDL_FreeSurface(surface);
-                surface = converted;
-            }
-            else
-                std::cerr << "Falha ao converter a superfície para 32 bits: " << SDL_GetError() << std::endl;
-        }
-
-		size.width = float(surface->w);
-		size.height = float(surface->h);
-	}		
-	else
 		std::cerr << "Falha ao carregar imagem: " << IMG_GetError() << std::endl;
+		return;
+	}
+
+	if (surface->format->BitsPerPixel != 32)
+	{
+		SDL_Surface* converted{ SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGBA32, 0) };
+		if (!converted)
+		{
+			std::cerr << "Falha ao converter a superfície para 32 bits: " << SDL_GetError() << std::endl;
+			return;
+		}
+
+		SDL_FreeSurface(surface);
+		surface = converted;
+	}
+
+	size.width = float(surface->w);
+	size.height = float(surface->h);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -92,7 +96,7 @@ Color Image::GetPixelColor(int x, int y) const
 bool Image::ComparePixelColor(int x, int y, Color color, unsigned tolerance) const
 {
 	// Cor do pixel
-	auto pixelColor{ GetPixelColor(x, y) };
+	Color pixelColor{ GetPixelColor(x, y) };
 
 	// Diferença total entre componentes RGBA
 	int difference{

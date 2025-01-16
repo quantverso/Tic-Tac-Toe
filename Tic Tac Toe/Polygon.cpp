@@ -34,7 +34,7 @@ void Polygon::Refresh()
 	float sinAngle{ sinf(this->angle.radians) };
 
 	// Aplica a rotação e atualiza vertices
-	for (size_t i{}; i < size; ++i)
+	for (int i{}; i < size; ++i)
 	{
 		float rotatedX{ origin[i].x * cosAngle - origin[i].y * sinAngle };
 		float rotatedY{ origin[i].x * sinAngle + origin[i].y * cosAngle };
