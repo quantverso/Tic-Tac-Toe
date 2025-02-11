@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Image">
+      <UniqueIdentifier>{4c800de1-30ff-4939-b82d-4d41cab10bd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{0ad4c718-40d8-4fab-bd04-e686f7828ce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{950a6cd0-a179-4aaf-966f-1f926714152c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes">
+      <UniqueIdentifier>{c6dbb771-e3ee-401b-af07-825032226dd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{989bc51b-6596-49ae-b26a-0e181f33f0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{15b7039e-cba9-4300-afd0-6dca286b69b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Music.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundBuffer.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformable.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Rotatable.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="Component.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Mouse.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Music.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundBuffer.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Component.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Scene.cpp" />
+  </ItemGroup>
+</Project>

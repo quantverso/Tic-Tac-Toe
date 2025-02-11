@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MCTS.cpp">
+      <Filter>MCTS</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>MCTS</Filter>
+    </ClCompile>
+    <ClCompile Include="TicTacToe.cpp">
+      <Filter>Tic Tac Toe</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Tic Tac Toe</Filter>
+    </ClCompile>
+    <ClCompile Include="Minimax.cpp">
+      <Filter>Minimax</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MCTS.h">
+      <Filter>MCTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>MCTS</Filter>
+    </ClInclude>
+    <ClInclude Include="TicTacToe.h">
+      <Filter>Tic Tac Toe</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Tic Tac Toe</Filter>
+    </ClInclude>
+    <ClInclude Include="Minimax.h">
+      <Filter>Minimax</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MCTS">
+      <UniqueIdentifier>{83f0b1af-254b-4fee-9466-f1f01e8708ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tic Tac Toe">
+      <UniqueIdentifier>{a68a8fad-15ab-46b5-9fa5-47a581cd709d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Minimax">
+      <UniqueIdentifier>{e0f84ef0-7639-429d-aacb-3f2879736c1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
